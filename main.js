@@ -1,6 +1,7 @@
 const cols = document.querySelectorAll('.col')
 const nextPlayer = document.querySelector('#nextP')
 const winner = document.querySelector('#winner')
+const btn = document.querySelector('.btn')
 
 
 
@@ -39,9 +40,7 @@ function winnerXO(){
     {
      
       winner.textContent = `X`
-      setTimeout(() => {
-        nextXO()
-      },1000)
+      restartGame()
     }
     
     if((cols[0].textContent === 'O' && cols[3].textContent === 'O' && cols[6].textContent === 'O') || 
@@ -56,11 +55,15 @@ function winnerXO(){
     {
      
       winner.textContent = `O`
-      setTimeout(() => {
-        nextXO()
-      },1000)
+      restartGame()
     }
 
-}    
+} 
+
+function restartGame(){
+  btn.addEventListener('click', ()=>{
+    nextXO()
+  })
+}
 
 nextXO()
