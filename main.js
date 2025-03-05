@@ -7,6 +7,7 @@ const btn = document.querySelector('.btn')
 
 function nextXO(){
     cols.forEach(col => {
+        nextPlayer.textContent = 'X'
         col.textContent = ''
         winner.textContent = ''
        
@@ -14,13 +15,17 @@ function nextXO(){
             if(nextPlayer.textContent === 'X' && !col.textContent){
                 col.textContent = 'X'
                 nextPlayer.textContent = 'O'
+
     
             } else if(!col.textContent){
                  col.textContent = 'O'
                  nextPlayer.textContent = 'X'
+
+              
             }
-          
+
             winnerXO()
+
         })
        
     })
@@ -66,4 +71,7 @@ function restartGame(){
   })
 }
 
+
+
 nextXO()
+restartGame()

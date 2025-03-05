@@ -18,6 +18,9 @@ body{
 }
 
 
+
+
+
 .board {
     display: grid;
     grid-template-columns: repeat(3, 100px);
